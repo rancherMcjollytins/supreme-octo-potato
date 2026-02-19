@@ -1,6 +1,6 @@
 firstName = None
 lastName = None
-orderedItems = ()
+orderedItems = []
 
 orderableItems = {
     "Pie" : 5.00,
@@ -29,8 +29,7 @@ def addUsername():
         else:
             print("An error occurred! Please retry.")
 
-def orderItems(orderedItem):
-    global orderedItems
+def orderItems(list):
     print("|-------| Menu |-------|")
     #this for loop was originally for i in orderableitems: print(f"{i} : {orderableItems([i])}"")
     #i changed it to this with the enumnerate based on oscar dodd code
@@ -38,10 +37,17 @@ def orderItems(orderedItem):
         print(f"{i + 1} : {item} ${orderableItems[item]}")
     print("|----------------------|")
     while True:
-        orderedItem = input("order: ")
-        
-        for index,order in orderedItems:
-            print(index)
+        orderedItem = None
+        orderedItem = input("order (input next to finish order.): ")
+        if orderedItem in orderableItems:
+            print(f"Added {orderedItem} to cart!")
+            list.append(orderedItem)
+            print(list)
+        elif orderedItem not in orderableItems:
+            print(f"Item not found in menu. Please input a new item.")
+        elif orderedItem.lower() == "next":
+            break
+
 
 
 
@@ -53,4 +59,4 @@ def orderItems(orderedItem):
 addUsername()
 print(f"{firstName} {lastName}")
 print()
-orderItems(None)
+orderItems(orderedItems)
