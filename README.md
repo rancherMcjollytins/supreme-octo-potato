@@ -1,2 +1,2 @@
 # supreme-octo-potato
-vegetables are bad for you laugh off the cortisol eat fruits and raw meat carnivore diet like our ancestors rahhh
+simple and kind of duct tapey lunch canteen ordering system for school task that uses an ordering function, discount applier function and prints receipt with just prints
